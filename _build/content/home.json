@@ -1,0 +1,218 @@
+{
+ "title": "Veridata Compliance Research Group (VCRG)",
+ "metaDescription": "Veridata Compliance Research Group is a private research firm supporting business clients with methodical analysis, verification, and straightforward reporting.",
+ "ogDescription": "Independent research and analysis for organizations that want to approach important decisions with clarity.",
+ "topbar": "Independent research · Measured analysis · Readable reporting",
+ "hero": {
+  "eyebrow": "Veridata Compliance Research Group",
+  "h1": "Informed decisions begin with considered research",
+  "lede": "We are an independent research firm that gathers, organizes, and examines information for business clients, with the intention of helping them move forward with clarity and confidence.",
+  "ctaPrimary": "Contact us",
+  "ctaSecondary": "Explore our services"
+ },
+ "highlights": [
+  {
+   "title": "Methodical by design",
+   "text": "Our structured, consistent process is designed to give each question patient, focused attention."
+  },
+  {
+   "title": "Readable, usable findings",
+   "text": "Conclusions are organized and explained in straightforward terms, framed around the decisions in front of you."
+  },
+  {
+   "title": "Discreet and respectful",
+   "text": "We seek to handle each engagement with tact and consideration, mindful of what clients choose to share."
+  }
+ ],
+ "about": {
+  "h2": "Research with a steady sense of purpose",
+  "lead": "Veridata Compliance Research Group (VCRG) is an independent, privately operated research firm. We seek to support business clients by collecting, verifying, and analyzing information, then presenting what we learn in a form that can inform sound decisions.",
+  "paragraphs": [
+   "Organizations face a steady stream of questions that call for thoughtful study and a well-grounded view of the facts. Our role is to make that work manageable: defining what needs to be understood, assembling the relevant information, and examining it closely.",
+   "We believe that good research is as much a matter of method as of curiosity. Each engagement is designed to follow a consistent sequence of steps, supported by open communication, so that findings can arrive well organized, precisely explained, and ready to inform what comes next.",
+   "Operating privately allows us to keep our focus on the work itself. Our intention is to be responsive, candid, and attentive from the initial conversation through the final report, so clients can know where matters stand at each stage."
+  ],
+  "checklist": [
+   "Orderly, step-by-step research",
+   "Attention to accuracy and detail",
+   "Straightforward, readable reporting",
+   "Responsive, direct communication"
+  ]
+ },
+ "services": {
+  "h2": "What we do",
+  "intro": "Each engagement is shaped around the questions a client needs answered and may draw on research, verification, and reporting as appropriate. The areas below outline how that work can be organized.",
+  "items": [
+   {
+    "id": "research-and-analysis",
+    "title": "Research and Analysis",
+    "short": "Research and analysis",
+    "text": "We gather and examine information relevant to the questions that matter to your organization. Our analysis seeks to bring patterns, context, and open questions into focus, presenting an even-handed picture that makes options easier to weigh.",
+    "bullets": [
+     "Framing the research question",
+     "Focused information gathering",
+     "Analysis of patterns and context"
+    ],
+    "photo": "laptop"
+   },
+   {
+    "id": "data-verification",
+    "title": "Data Verification and Quality Review",
+    "short": "Data verification",
+    "text": "Sound decisions depend on accurate information. We review data for consistency, cross-reference key details where possible, and flag gaps or discrepancies, intending to give you a firmer sense of which information can be relied upon.",
+    "bullets": [
+     "Consistency and accuracy review",
+     "Cross-referencing of key details",
+     "Notes on gaps and discrepancies"
+    ],
+    "photo": "folders"
+   },
+   {
+    "id": "information-organization",
+    "title": "Information Organization and Reporting",
+    "short": "Organizing and reporting",
+    "text": "Scattered information can slow progress. We organize material into a logical framework and prepare concise reports and summaries that present findings in accessible language, with supporting detail available for those who want to look more closely.",
+    "bullets": [
+     "Sorting and structuring material",
+     "Written briefs and overviews",
+     "Supporting detail where helpful"
+    ],
+    "photo": "desk"
+   },
+   {
+    "id": "research-support",
+    "title": "Ongoing Research Support",
+    "short": "Research support",
+    "text": "Some needs are better served by a steady resource than by a standalone project. We can provide general research support on a continuing basis, working alongside your organization to explore questions as they arise and to keep relevant information current.",
+    "bullets": [
+     "Flexible, as-needed assistance",
+     "Follow-up research on request",
+     "Updates at an agreed cadence"
+    ],
+    "photo": "meeting"
+   }
+  ]
+ },
+ "band": {
+  "eyebrow": "Our perspective",
+  "h2": "Good judgment rests on information weighed with discipline and an open mind.",
+  "note": "Our goal is to bring patience, order, and a steady hand to each question placed before us."
+ },
+ "values": {
+  "eyebrow": "Why VCRG",
+  "h2": "What guides our work",
+  "intro": "The way research is conducted shapes the worth of what it produces. These values inform how we approach each engagement and how we carry ourselves along the way.",
+  "items": [
+   {
+    "title": "Objectivity",
+    "text": "Findings should reflect what the information actually shows. We give fair weight to the material at hand and strive to avoid bias toward any preferred conclusion."
+   },
+   {
+    "title": "Clarity",
+    "text": "We favor direct, precise language over jargon, so that findings can be read easily, discussed openly, and put to use without unnecessary interpretation."
+   },
+   {
+    "title": "Rigor",
+    "text": "We look closely at the details, test our own assumptions, and question what seems settled, because small inaccuracies can grow into larger misunderstandings over time."
+   },
+   {
+    "title": "Respect for your time",
+    "text": "We make a point of keeping engagements focused and communication efficient, so that our involvement fits into your priorities rather than adding to your workload."
+   }
+  ]
+ },
+ "approach": {
+  "intro": "Our approach is deliberately straightforward: understand the question, do the work properly, and share the findings in a form that is easy to use.",
+  "principles": [
+   {
+    "title": "Accuracy",
+    "text": "We place a high priority on getting the details right. We seek to review information attentively, note inconsistencies rather than overlook them, and be open about the limits of what the available information can show."
+   },
+   {
+    "title": "Confidentiality",
+    "text": "We intend to treat client matters with discretion. Sensitivity to the client's interests and concerns is part of how we seek to operate in each engagement."
+   },
+   {
+    "title": "Responsiveness",
+    "text": "We aim to reply promptly, keep clients informed of progress, and remain available for questions, so that there is an open line of communication throughout each engagement."
+   }
+  ],
+  "processTitle": "Our process",
+  "steps": [
+   {
+    "title": "Understand",
+    "text": "We begin by learning about your question, its context, and what a helpful answer would look like."
+   },
+   {
+    "title": "Define",
+    "text": "Together we agree on a defined scope, the questions to address, and the form the findings should take."
+   },
+   {
+    "title": "Research",
+    "text": "We gather, organize, and review pertinent information, verifying key details as we go."
+   },
+   {
+    "title": "Report",
+    "text": "Findings are presented concisely and in readable form, and we seek to make time to discuss them and answer follow-up questions."
+   }
+  ]
+ },
+ "engagement": {
+  "eyebrow": "Working together",
+  "h2": "Flexible ways to engage",
+  "intro": "Engagements can take different forms, depending on the nature of the question and the level of involvement a client prefers. The options below are starting points that can be adapted as needed.",
+  "items": [
+   {
+    "title": "Defined projects",
+    "text": "A focused engagement built around a specific question, with a scope set in advance, a definite endpoint, and findings delivered in an agreed format."
+   },
+   {
+    "title": "Ongoing support",
+    "text": "A longer-term arrangement for organizations that expect research needs to arise over time and value a consistent, familiar point of contact."
+   },
+   {
+    "title": "Tailored scope",
+    "text": "An arrangement designed for particular circumstances, drawing on whichever elements of our services suit the situation and adjusting as needs evolve."
+   }
+  ]
+ },
+ "faq": [
+  {
+   "q": "What kind of work does VCRG take on?",
+   "a": "We focus on gathering, organizing, verifying, and interpreting information, and on reporting findings in a practical, readable format. The scope of each engagement is defined by the specific questions involved."
+  },
+  {
+   "q": "Who does VCRG work with?",
+   "a": "VCRG seeks to work with business clients. Our work is intended to be tailored to each client's particular questions and context."
+  },
+  {
+   "q": "How does an engagement get started?",
+   "a": "Reach out by email with a short outline of what you need. We aim to review it, follow up with any questions, and, where there is a fit, propose a scope before any work begins."
+  },
+  {
+   "q": "What form do findings take?",
+   "a": "Findings can be presented as a concise written summary, a more detailed report, or an organized set of materials, depending on what the engagement calls for and how the information will be used."
+  },
+  {
+   "q": "Can the scope change as the work develops?",
+   "a": "Yes. If priorities shift or new questions emerge, we can discuss adjusting the scope together and agree on any changes before proceeding."
+  },
+  {
+   "q": "Is VCRG a government agency?",
+   "a": "No. VCRG is a private research firm and is not affiliated with any government agency."
+  },
+  {
+   "q": "Do you provide legal or financial advice?",
+   "a": "No. VCRG provides research services only. We do not provide legal, financial, or investment advice."
+  },
+  {
+   "q": "How is information on these pages handled?",
+   "a": "These informational pages do not use cookies or analytics, and we do not sell personal information collected through them. Details are in our [privacy notice](/privacy/)."
+  }
+ ],
+ "contact": {
+  "h2": "Start a conversation",
+  "note": "To discuss a research need, please email us with a brief description of your request. We look forward to hearing from you and intend to follow up by email."
+ },
+ "footerAbout": "VCRG is a private, independent firm offering research, verification, analysis, and reporting support to business clients."
+}

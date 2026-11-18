@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /vcrg-send/
+
+Sitemap: https://veridatacompliance.org/sitemap.xml

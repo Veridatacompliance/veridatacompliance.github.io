@@ -1,148 +1,104 @@
 # Veridata Compliance Research Group website
 
-A single static page (HTML and CSS, no build step, no JavaScript) published with GitHub Pages.
+A static, multi-page website (HTML and CSS, plus one small script for the mobile menu) published with GitHub Pages at **https://veridatacompliance.org**.
 
-| File | Purpose |
+## What's in this repository
+
+| Path | Purpose |
 |---|---|
-| `index.html` | The page |
+| `index.html` | Home page |
+| `about/`, `services/`, `approach/`, `insights/`, `careers/`, `contact/`, `privacy/`, `terms/` | Inner pages (each folder holds an `index.html`) |
+| `services/<service>/`, `insights/<essay>/` | Individual service pages and essays |
+| `404.html` | Page shown for addresses that don't exist |
 | `styles.css` | All styles (colors and spacing are variables at the top) |
+| `site.js` | The mobile menu (no tracking, no cookies) |
 | `favicon.svg` | Browser-tab icon (the logo's V mark) |
-| `images/` | Logo files (`logo.png` for the header, `logo-white.png` for the dark footer, `apple-touch-icon.png` for phone home screens) and stock photos, two sizes each (see Photo credits below) |
-| `README.md` | These instructions |
+| `images/` | Logo files (`logo.png`, `logo-white.png`, `apple-touch-icon.png`, `og-image.png` for link previews) and stock photos |
+| `sitemap.xml`, `robots.txt` | Help search engines find every page |
+| `CNAME` | Tells GitHub Pages to serve the site at veridatacompliance.org |
+| `_build/` | The page builder and the wording for every page (not published, because the folder name starts with an underscore) |
 
 ## Preview locally
 
-Double-click `index.html` to open it in a browser, or serve the folder and open http://localhost:8000:
+The pages use site-root links (for example `/styles.css`), so open them through a small local web server rather than by double-clicking. From this folder:
 
 ```bash
 python -m http.server 8000
 ```
 
----
+then open http://localhost:8000.
 
-## 1. Create the repository
+## Changing the wording
 
-1. Sign in to GitHub with an account that is an **owner** of the `veridatacompliance` organization.
-   No organization yet? Avatar menu → **Your organizations** → **New organization** → **Free**, and name it `veridatacompliance`.
-2. Go to https://github.com/new.
-3. **Owner:** `veridatacompliance`. **Repository name:** `veridatacompliance.github.io`, spelled exactly like that. That name is what makes it the organization's main site.
-4. **Visibility:** Public. GitHub Pages is free for public repositories.
-5. Leave "Add a README", ".gitignore", and "license" off, then click **Create repository**.
+All page wording lives in two files:
 
-## 2. Push the files
+- `_build/content/home.json`: the home page, plus the shared top bar and footer text.
+- `_build/content/pages.json`: every other page.
 
-**Option A: command line** (needs Git installed)
+After editing either file, rebuild the pages:
 
 ```bash
-cd path/to/this/folder
-git init -b main
-git config user.name "VCRG"
-git config user.email "info@veridatacompliance.org"
-git add index.html styles.css favicon.svg README.md images
-git commit -m "Initial site"
-git remote add origin https://github.com/veridatacompliance/veridatacompliance.github.io.git
-git push -u origin main
+python _build/build.py
 ```
 
-The two `git config` lines set the commit author for this repository only. In a public repository, commit author names and emails are visible to anyone.
+On the computer that maintains the site, a local checker (`_build/check.py`, kept out of this repository) looks for broken links, missing images, duplicate titles, and wording the site avoids. Run it after each build:
 
-**Option B: upload in the browser**
+```bash
+python _build/check.py
+```
 
-On the new, empty repository page, click **uploading an existing file**, drag in `index.html`, `styles.css`, `favicon.svg`, `README.md`, and the whole `images` folder, then click **Commit changes**. After it finishes, check that the repository shows an `images` folder with 18 files inside.
+Shared parts of the layout (header, menu, footer, page sections) are in `_build/build.py`. Editing the generated HTML by hand also works, but the next build overwrites those edits.
 
-## 3. Turn on GitHub Pages
+## Publishing changes
 
-1. In the repository, open **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Set **Branch** to `main` and the folder to `/ (root)`, then click **Save**. (It may already be set this way. If so, there's nothing to change.)
-4. After a minute or two the site is live at **https://veridatacompliance.github.io/**. You can watch progress in the **Actions** tab ("pages build and deployment"). When it finishes, the Pages settings screen shows a **Visit site** button.
+GitHub Pages publishes whatever is on the `main` branch:
 
-To update the site later, edit the files and commit to `main`. GitHub redeploys automatically.
+```bash
+git add -A
+```
 
----
+```bash
+git commit -m "Describe the change"
+```
 
-## 4. Optional: use veridatacompliance.org
+```bash
+git push
+```
 
-Do steps 4a–4d in one sitting. Once the custom domain is saved (4c), `veridatacompliance.github.io` starts redirecting to `veridatacompliance.org`, so the DNS records (4b) should already be in place.
+The site updates within a minute or two. Pushes from this folder sign in as the `Veridatacompliance` GitHub account; the commit author is set to "VCRG" for this repository only. After changing `styles.css` or `site.js`, also change `ASSET_VERSION` in `_build/build.py` and rebuild, so browsers fetch the new files right away.
 
-### 4a. Verify the domain (recommended)
+## Domain and DNS (already set up)
 
-Verifying stops anyone else from attaching the domain to their own GitHub Pages site.
+The domain is managed at GoDaddy. GitHub Pages needs these records, which are in place:
 
-1. Organization page → **Settings** → **Pages** (under "Code, planning, and automation") → **Add a domain**.
-2. Enter `veridatacompliance.org`. GitHub shows a TXT record to create.
-3. At your DNS provider, add that TXT record. The host/name looks like `_github-pages-challenge-veridatacompliance` and the value is the code GitHub shows.
-4. Back on GitHub, click **Verify**. If it fails at first, wait a few minutes for DNS to update and try again.
-
-### 4b. Add the DNS records
-
-At the DNS provider for `veridatacompliance.org`:
-
-| Type | Name / Host | Value |
+| Type | Name | Value |
 |---|---|---|
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| AAAA (optional, IPv6) | `@` | `2606:50c0:8000::153` |
-| AAAA (optional, IPv6) | `@` | `2606:50c0:8001::153` |
-| AAAA (optional, IPv6) | `@` | `2606:50c0:8002::153` |
-| AAAA (optional, IPv6) | `@` | `2606:50c0:8003::153` |
-| CNAME | `www` | `veridatacompliance.github.io` |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | veridatacompliance.github.io |
 
-- Delete any other A or AAAA records on `@` (for example, a registrar's "parked" page), turn off any domain or URL forwarding, and don't add a wildcard (`*`) record.
-- If `www` already has a record, replace it with the CNAME above.
-- **Leave email records alone.** Don't change MX records or email-related TXT/CNAME records (SPF, DKIM, DMARC, autodiscover, other verification TXT records). The website records above don't affect email.
+The email records (MX, SPF and DKIM TXT/CNAME records, autodiscover) belong to Microsoft 365. Leave them unchanged.
 
-### 4c. Add the custom domain (this creates the CNAME file)
-
-1. Repository → **Settings → Pages → Custom domain**: enter `veridatacompliance.org` and click **Save**.
-2. GitHub commits a file named `CNAME` to the repository root containing `veridatacompliance.org`. If you push from the command line, run `git pull` before your next push.
-
-   To do it by hand instead, create a file named `CNAME` (all caps, no extension) in the repository root containing this single line, then commit it and confirm the domain appears under **Settings → Pages**:
-
-   ```
-   veridatacompliance.org
-   ```
-
-### 4d. Turn on HTTPS
-
-1. Wait for the DNS check under **Settings → Pages** to pass. This usually takes minutes to a few hours; DNS changes can take up to 48 hours to spread.
-2. Tick **Enforce HTTPS** when it becomes available. GitHub issues the certificate automatically, which can take up to an hour after DNS resolves.
-
-With both `@` and `www` set up, GitHub redirects `www.veridatacompliance.org` to `veridatacompliance.org`.
-
-To check DNS from a terminal (it should list the four `185.199.x.153` addresses):
-
-```bash
-nslookup veridatacompliance.org
-```
-
-**Note:** once the organization site uses this domain, any other GitHub Pages sites published from repositories in the `veridatacompliance` organization that don't have their own custom domain are served under it, at `veridatacompliance.org/<repository-name>`.
-
----
-
-## 5. Optional: help Google find it
-
-A new site can take days to weeks to appear in search results. To speed that up, add the site in [Google Search Console](https://search.google.com/search-console), verify it (a DNS TXT record for the custom domain, or the HTML-tag method for the `github.io` address), then use **URL Inspection → Request indexing** on the home page.
-
-## Editing notes
-
-- To change the contact address, search `index.html` for `info@veridatacompliance.org`. It appears in several places (top bar, Contact section, footer).
-- The questions section and the footer both say the site doesn't use cookies or analytics. If analytics are ever added, update both.
-- To update the logo, replace `images/logo.png` (navy and teal, for light backgrounds) and `images/logo-white.png` (white and teal, for the navy footer) with files of the same proportions.
-- Each photo comes in two widths (for example `desk-640.jpg` and `desk-1200.jpg`). To swap one, replace both files with the same names and similar proportions, or update the `src`/`srcset` lines in `index.html`.
+In the repository's **Settings → Pages**, the custom domain is `veridatacompliance.org` and **Enforce HTTPS** is on.
 
 ## Photo credits
 
 All photos are from [Unsplash](https://unsplash.com) and used under the [Unsplash License](https://unsplash.com/license), which allows free commercial use without attribution. Credits are listed here for reference.
 
-| File | Photo | Photographer |
+| Files | Photo | Photographer |
 |---|---|---|
 | `hero-*.jpg` | [Low angle photo of city high rise buildings](https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA) | Sean Pollock |
 | `about-*.jpg` | [Hallway between glass-panel doors](https://unsplash.com/photos/hallway-between-glass-panel-doors-yWwob8kwOCk) | Nastuh Abootalebi |
-| `desk-*.jpg` | [A wooden table topped with papers and a pen](https://unsplash.com/photos/a-wooden-table-topped-with-papers-and-a-pen-spScdgWY-_c) | 2H Media |
-| `folders-*.jpg` | [A stack of thick folders on a white surface](https://unsplash.com/photos/a-stack-of-thick-folders-on-a-white-surface-XN4T2PVUUgk) | Beatriz Pérez Moya |
-| `laptop-*.jpg` | [Laptop computer on glass-top table](https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU) | Carlos Muza |
-| `meeting-*.jpg` | [A glass walled meeting room with a table and chairs](https://unsplash.com/photos/a-glass-walled-meeting-room-with-a-table-and-chairs-fxIcYymZHJg) | Hammer Group |
+| `desk-*.jpg`, `desk-hero-*.jpg` | [A wooden table topped with papers and a pen](https://unsplash.com/photos/a-wooden-table-topped-with-papers-and-a-pen-spScdgWY-_c) | 2H Media |
+| `folders-*.jpg`, `folders-hero-*.jpg` | [A stack of thick folders on a white surface](https://unsplash.com/photos/a-stack-of-thick-folders-on-a-white-surface-XN4T2PVUUgk) | Beatriz Pérez Moya |
+| `laptop-*.jpg`, `laptop-hero-*.jpg` | [Laptop computer on glass-top table](https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU) | Carlos Muza |
+| `meeting-*.jpg`, `meeting-hero-*.jpg` | [A glass walled meeting room with a table and chairs](https://unsplash.com/photos/a-glass-walled-meeting-room-with-a-table-and-chairs-fxIcYymZHJg) | Hammer Group |
 | `band-*.jpg` | [Low angle photo of curtain wall building](https://unsplash.com/photos/low-angle-photo-of-curtain-wall-building-1FxMET2U5dU) | Héctor J. Rivas |
+| `glass-*.jpg` | [Architectural photography of glass building](https://unsplash.com/photos/architectural-photography-of-glass-building-T0iFfJw-rB0) | Christian Ladewig |
+| `towers-*.jpg` | [Low angle photography of high rise building](https://unsplash.com/photos/low-angle-photography-of-high-rise-building-ISQ3M9fPa0g) | Rafael Garcin |
+| `stepped-*.jpg` | [Modern glass skyscraper with stepped facade](https://unsplash.com/photos/modern-glass-skyscraper-with-stepped-facade-0d-z8cJGIR4) | Parrish Freeman |
+| `curve-*.jpg` | [Low-angle photography of blue glass walled building](https://unsplash.com/photos/low-angle-photography-of-blue-glass-walled-building-during-daytime-WXwQ-wj-g9Q) | Vojtech Bruzek |
+| `writing-*.jpg` | [Man writing on paper](https://unsplash.com/photos/man-writing-on-paper-OQMZwNd3ThU) | Scott Graham |
+| `workspace-*.jpg` | [Photo of dining table and chairs inside room](https://unsplash.com/photos/photo-of-dining-table-and-chairs-inside-room-eHD8Y1Znfpk) | Nastuh Abootalebi |

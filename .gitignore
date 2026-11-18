@@ -1,0 +1,3 @@
+# Local-only tools; kept out of the public repository
+_build/check.py
+_build/export_text.py
